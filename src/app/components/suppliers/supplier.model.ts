@@ -1,5 +1,5 @@
 export interface Supplier { 
-    id: number;
+    id: any;
     name: string;
     phone: number;
     state: string;

@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-xs-12">
             <h3>Supplier Display</h3>
-            <button type="button" class="btn btn-primary">
+            <button type="button" class="btn btn-primary" (click)="onFetchPosts()">
                 Edit Supplier
             </button>
         </div>  
@@ -21,10 +21,10 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row">ID</th>
-                        <td>Name</td>
-                        <td>Phone</td>
-                        <td>State</td>
+                        <th scope="row">{{ loadedPosts[0].id }}</th>
+                        <td>{{ loadedPosts[0].name }}</td>
+                        <td>{{ loadedPosts[0].phone }}</td>
+                        <td>{{ loadedPosts[0].state }}</td>
                     </tr>
                 </tbody>
             </table>
