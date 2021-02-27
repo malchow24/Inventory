@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SupplierData } from './supplier-data.service';
+import { Supplier } from './supplier.model';
 
 @Component({
   selector: 'app-suppliers',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuppliersComponent implements OnInit {
 
-  constructor() { }
+  constructor(private init: SupplierData) { }
+
 
   ngOnInit(): void {
+    console.log(this.init);
+    
+
   }
 
 }

@@ -2,6 +2,7 @@ export const environment = {
   production: true,
   apiKey: "AIzaSyCye-40x6oC6uFJF89o-PvF5Xjk4nk40KA",
     authDomain: "inventory-management-83f99.firebaseapp.com",
+    databaseURL: "https://inventory-management-83f99-default-rtdb.firebaseio.com",
     projectId: "inventory-management-83f99",
     storageBucket: "inventory-management-83f99.appspot.com",
     messagingSenderId: "110901723496",
