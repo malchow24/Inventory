@@ -9,6 +9,7 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from 'src/app-routing.module';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { PartsComponent } from './components/parts/parts.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
     HeaderComponent,
     SuppliersComponent,
     LoginComponent,
+    PartsComponent,
   ],
   imports: [
     BrowserModule,
