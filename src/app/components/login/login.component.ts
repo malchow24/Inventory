@@ -11,17 +11,11 @@ export class LoginComponent implements OnInit {
   constructor(private auth: Authentication) { }
 
   ngOnInit(): void {
-    
+
   }
 
-  login() {
-    this.auth.login();
-    
+  onSignin(email: string, password: string) {
+    this.auth.signin(email, password);
   }
-
-  logout() {
-    this.auth.logout();
-  }
-
 
 }

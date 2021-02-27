@@ -7,6 +7,11 @@ import { SuppliersComponent } from "./app/components/suppliers/suppliers.compone
 const routes: Routes = [
     {
         path: '',
+        redirectTo: 'login',
+        pathMatch: 'full',
+    },
+    {
+        path: 'login',
         component: LoginComponent,
     },
     {

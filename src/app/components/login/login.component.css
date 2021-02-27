@@ -1,3 +1,12 @@
 button{
     margin-top: 10px;
 }
+
+.display {
+    margin: 0 auto !important;
+}
+
+h1{
+    text-align: center;
+    padding: 20px;
+}

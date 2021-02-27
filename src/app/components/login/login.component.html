@@ -1,11 +1,12 @@
 <div class="container">
+    <h1>Inventory Management</h1>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 center-block">
             <label>Email: </label>
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" #email>
             <label>Password: </label>
-            <input type="password" class="form-control">
-            <button (click)="login()" class="btn btn-primary">Login</button>
+            <input type="password" class="form-control" #password>
+            <button class="btn btn-success" (click)="onSignin(email.value, password.value)">Log In</button>
         </div>
     </div>
 </div>
