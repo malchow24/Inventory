@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import { AngularFireAuth } from '@angular/fire/auth';
-import { ActivatedRoute, Router } from "@angular/router";
-import firebase from 'firebase/app';
+import { Router } from "@angular/router";
 import { BehaviorSubject } from "rxjs";
 
 
@@ -27,6 +26,7 @@ export class Authentication {
 
     logout() {
         this.firebaseAuth.signOut();
+        this.loggedIn.next(false);
         this.route.navigate(['']);
     }
     

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { SupplierData } from './supplier-data.service';
-import { Supplier } from './supplier.model';
+
 
 @Component({
   selector: 'app-suppliers',
@@ -10,10 +10,10 @@ import { Supplier } from './supplier.model';
   styleUrls: ['./suppliers.component.css']
 })
 export class SuppliersComponent implements OnInit {
-
   loadedPosts = [];
   isFetching = false;
   error = null;
+  supplierName = '';
   private errorSub: Subscription;
   constructor(private http: HttpClient, private supplierService: SupplierData) { }
 
@@ -22,20 +22,12 @@ export class SuppliersComponent implements OnInit {
     this.errorSub = this.supplierService.error.subscribe(errorMessage => {
       this.error = errorMessage;
     });
+    this.onFetchPosts();
+  }
 
-
-    this.isFetching = true;
-    this.supplierService.fetchPosts().subscribe(posts => {
-      this.isFetching = false;
-      this.loadedPosts = posts;
-    },
-    error => {
-      this.isFetching = false;
-      this.error = error.message;
-      console.log(error);
-      
-    });
-
+  onClick(post: object) {
+    console.log(post);
+    
   }
 
   onFetchPosts() {

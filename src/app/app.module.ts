@@ -11,6 +11,8 @@ import { AppRoutingModule } from 'src/app-routing.module';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { PartsComponent } from './components/parts/parts.component';
 import { HomeComponent } from './components/home/home.component';
+import { TextFilterPipe } from './components/suppliers/text-filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,13 +23,15 @@ import { HomeComponent } from './components/home/home.component';
     LoginComponent,
     PartsComponent,
     HomeComponent,
+    TextFilterPipe,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment),
     AppRoutingModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
