@@ -36,7 +36,7 @@ const routes: Routes = [
         path: 'suppliers',
         component: SuppliersComponent,
         canActivate: [AngularFireAuthGuard],
-        data: { authGuardPipe: redirectUnauthorizedToLogin }
+        data: { authGuardPipe: redirectUnauthorizedToLogin },
     }
 ]
 

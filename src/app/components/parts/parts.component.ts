@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Part } from './parts.model';
+import { PartsData } from './parts.service';
 
 @Component({
   selector: 'app-parts',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./parts.component.css']
 })
 export class PartsComponent implements OnInit {
+  parts: Part[];
 
-  constructor() { }
+  constructor(private partsService: PartsData) { }
 
   ngOnInit(): void {
+    this.parts = this.partsService.parts;
   }
 
 }

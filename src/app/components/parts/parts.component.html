@@ -1,1 +1,39 @@
-<p>parts works!</p>
+<div class="all">    
+    <div class="row">
+        <div class="col-xs-12">
+            <h3>Parts</h3>
+            <button type="button" class="btn btn-primary">
+                Add Part
+            </button>
+        </div>  
+    </div>
+    <hr>
+    <div class="row display">
+        <div class="col-xs-12">
+            <table class="table table-responsive table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">UOM</th>
+                        <th scope="col">Min</th>
+                        <th scope="col">Max</th>
+                        <th scope="col">Location</th>
+                        <th scope="col">Edit</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let part of parts">
+                    <tr>
+                        <th scope="row">{{ part.partNumber }}</th>
+                        <td>{{ part.description }}</td>
+                        <td>{{ part.uom }}</td>
+                        <td>{{ part.min }}</td>
+                        <td>{{ part.max }}</td>
+                        <td>{{ part.location }}</td>
+                        <td><button class="btn btn-primary">Edit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
