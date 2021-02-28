@@ -1,6 +1,6 @@
 # InventoryManagement
 
-https://inventory-management-83f99.web.app/ 
+inventory-management-83f99.firebaseapp.com
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.2.
 
