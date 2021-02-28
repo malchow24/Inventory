@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit {
 
   onLogout() {
     this.auth.logout();
+    this.isLoggedIn$ = this.auth.loggedIn;
   }
 
 }

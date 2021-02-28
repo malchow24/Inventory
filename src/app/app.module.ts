@@ -7,7 +7,7 @@ import { SuppliersComponent } from './components/suppliers/suppliers.component';
 import { LoginComponent } from './components/login/login.component';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
-import { AppRoutingModule } from 'src/app-routing.module';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { PartsComponent } from './components/parts/parts.component';
 import { HomeComponent } from './components/home/home.component';
