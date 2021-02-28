@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 import { AppRoutingModule } from 'src/app-routing.module';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { PartsComponent } from './components/parts/parts.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { PartsComponent } from './components/parts/parts.component';
     SuppliersComponent,
     LoginComponent,
     PartsComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

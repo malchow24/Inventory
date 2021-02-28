@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Authentication } from './components/login/auth-service';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'inventory-management';
 
+  constructor() {}
+
+  ngOnInit(): void {
+
+  }
   
 }

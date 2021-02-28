@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { AngularFireAuth } from '@angular/fire/auth';
 import { ActivatedRoute, Router } from "@angular/router";
 import firebase from 'firebase/app';
-import { Observable } from "rxjs";
+import { BehaviorSubject } from "rxjs";
 
 
 
@@ -12,16 +12,16 @@ import { Observable } from "rxjs";
 })
 
 export class Authentication {
-    isLoggedIn = false;
+    public loggedIn = new BehaviorSubject<boolean>(false);
 
     constructor(public firebaseAuth: AngularFireAuth, private route: Router) {}
 
     async signin(email: string, password: string) {
         await this.firebaseAuth.signInWithEmailAndPassword(email, password)
         .then(val => {
-                this.isLoggedIn = true;
+                this.loggedIn.next(true);
                 console.log(val);
-                this.route.navigate(['suppliers']);     
+                this.route.navigate(['home']);     
         })
     }
 

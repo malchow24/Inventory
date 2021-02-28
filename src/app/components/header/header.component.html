@@ -1,8 +1,8 @@
-<nav class="navbar navbar-default display">
+<nav class="navbar navbar-default display" *ngIf="isLoggedIn$ | async">
     <div class="container-fluid">
         <div class="navbar-collapse">
             <ul class="nav navbar-nav">
-                <a class="navbar-brand title" href="#">Inventory</a>
+                <a class="navbar-brand title" routerLink="home">Inventory</a>
                 <li><a routerLink="parts">Parts</a></li>
                 <li><a routerLink="suppliers">Suppliers</a></li>
                 <li><a href="#">Reorder</a></li>

@@ -3,6 +3,11 @@ import { RouterModule, Routes } from "@angular/router";
 import { LoginComponent } from "./app/components/login/login.component";
 import { PartsComponent } from "./app/components/parts/parts.component";
 import { SuppliersComponent } from "./app/components/suppliers/suppliers.component";
+import { AngularFireAuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
+import { HomeComponent } from "./app/components/home/home.component";
+
+const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
+
 
 const routes: Routes = [
     {
@@ -11,16 +16,27 @@ const routes: Routes = [
         pathMatch: 'full',
     },
     {
+        path: 'home',
+        component: HomeComponent,
+        canActivate: [AngularFireAuthGuard],
+        data: { authGuardPipe: redirectUnauthorizedToLogin }
+    },
+    {
         path: 'login',
         component: LoginComponent,
+        data: { authGuardPipe: redirectUnauthorizedToLogin }
     },
     {
         path: 'parts',
         component: PartsComponent,
+        canActivate: [AngularFireAuthGuard],
+        data: { authGuardPipe: redirectUnauthorizedToLogin }
     },
     {
         path: 'suppliers',
         component: SuppliersComponent,
+        canActivate: [AngularFireAuthGuard],
+        data: { authGuardPipe: redirectUnauthorizedToLogin }
     }
 ]
 
