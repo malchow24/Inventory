@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { SupplierData } from './supplier-data.service';
@@ -15,7 +14,7 @@ export class SuppliersComponent implements OnInit {
   error = null;
   supplierName = '';
   private errorSub: Subscription;
-  constructor(private http: HttpClient, private supplierService: SupplierData) { }
+  constructor(private supplierService: SupplierData) { }
 
 
   ngOnInit(): void {

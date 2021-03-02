@@ -3,8 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Supplier } from "./supplier.model";
 import { catchError, map } from "rxjs/operators";
-import { Observable, Subject } from "rxjs";
-import { throwError } from "rxjs/internal/observable/throwError";
+import { Subject, throwError } from "rxjs";
 
 
 @Injectable({
@@ -31,7 +30,6 @@ export class SupplierData {
                 return postsArray;
             }),
             catchError(errorRes => {
-                // send to analytics server
                 return throwError(errorRes);
             })
         );
