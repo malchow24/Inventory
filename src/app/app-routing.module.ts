@@ -6,6 +6,7 @@ import { SuppliersComponent } from "./components/suppliers/suppliers.component";
 import { AngularFireAuthGuard, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 import { HomeComponent } from "./components/home/home.component";
 
+
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 
 

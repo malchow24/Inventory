@@ -10,6 +10,7 @@
     <hr>
     <div class="row display">
         <div class="col-xs-12">
+            <app-supplier-edit *ngIf="this.edit"></app-supplier-edit>
             <input type="text" [(ngModel)]="supplierName" placeholder="Search Supplier" class="form-control">
             <table class="table table-bordered table-hover">
                 <thead>
@@ -18,7 +19,7 @@
                         <th scope="col">Name</th>
                         <th scope="col">Phone</th>
                         <th scope="col">State</th>
-                        <th scope="col">Edit</th>
+                        <th scope="col" *ngIf="!this.edit">Edit</th>
                     </tr>
                 </thead>
                 <tbody *ngFor="let post of loadedPosts | textFilter: supplierName">
@@ -27,7 +28,7 @@
                         <td>{{ post.Name }}</td>
                         <td>{{ post.Phone }}</td>
                         <td>{{ post.State }}</td>
-                        <td><button class="btn btn-primary" (click)="onClick(post)">Edit</button></td>
+                        <td *ngIf="!this.edit"><button class="btn btn-primary" (click)="onClick(post)">Edit</button></td>
                     </tr>
                 </tbody>
             </table>

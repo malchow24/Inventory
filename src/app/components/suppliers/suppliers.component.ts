@@ -13,6 +13,8 @@ export class SuppliersComponent implements OnInit {
   isFetching = false;
   error = null;
   supplierName = '';
+  edit = false;
+  currentSupplier: object;
   private errorSub: Subscription;
   constructor(private supplierService: SupplierData) { }
 
@@ -25,7 +27,9 @@ export class SuppliersComponent implements OnInit {
   }
 
   onClick(post: object) {
-    console.log(post);
+    this.currentSupplier = post;
+    this.edit = true;
+    console.log(this.currentSupplier);
     
   }
 

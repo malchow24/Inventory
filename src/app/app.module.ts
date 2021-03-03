@@ -13,6 +13,8 @@ import { PartsComponent } from './components/parts/parts.component';
 import { HomeComponent } from './components/home/home.component';
 import { TextFilterPipe } from './components/suppliers/text-filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { SupplierEditComponent } from './components/suppliers/supplier-edit/supplier-edit.component';
+
 
 
 @NgModule({
@@ -24,6 +26,7 @@ import { FormsModule } from '@angular/forms';
     PartsComponent,
     HomeComponent,
     TextFilterPipe,
+    SupplierEditComponent,
   ],
   imports: [
     BrowserModule,
