@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./supplier-edit.component.css']
 })
 export class SupplierEditComponent implements OnInit {
+  currentPost: object;
 
   constructor() { }
 
   ngOnInit(): void {
-
   }
 
 }

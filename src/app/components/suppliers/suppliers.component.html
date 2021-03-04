@@ -22,13 +22,13 @@
                         <th scope="col" *ngIf="!this.edit">Edit</th>
                     </tr>
                 </thead>
-                <tbody *ngFor="let post of loadedPosts | textFilter: supplierName">
+                <tbody *ngFor="let supplier of suppliers | textFilter: supplierName">
                     <tr>
-                        <th scope="row">{{ post.id }}</th>
-                        <td>{{ post.Name }}</td>
-                        <td>{{ post.Phone }}</td>
-                        <td>{{ post.State }}</td>
-                        <td *ngIf="!this.edit"><button class="btn btn-primary" (click)="onClick(post)">Edit</button></td>
+                        <th scope="row">{{ supplier.id }}</th>
+                        <td>{{ supplier.Name }}</td>
+                        <td>{{ supplier.Phone }}</td>
+                        <td>{{ supplier.State }}</td>
+                        <td *ngIf="!this.edit"><button class="btn btn-primary" (click)="onClick(supplier)">Edit</button></td>
                     </tr>
                 </tbody>
             </table>

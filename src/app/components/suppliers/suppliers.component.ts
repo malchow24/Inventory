@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { SupplierData } from './supplier-data.service';
+import { map } from 'rxjs/operators';
 
 
 @Component({
@@ -9,43 +9,30 @@ import { SupplierData } from './supplier-data.service';
   styleUrls: ['./suppliers.component.css']
 })
 export class SuppliersComponent implements OnInit {
-  loadedPosts = [];
-  isFetching = false;
-  error = null;
   supplierName = '';
+  suppliers: any;
   edit = false;
-  currentSupplier: object;
-  private errorSub: Subscription;
   constructor(private supplierService: SupplierData) { }
 
 
   ngOnInit(): void {
-    this.errorSub = this.supplierService.error.subscribe(errorMessage => {
-      this.error = errorMessage;
-    });
-    this.onFetchPosts();
+    this.retrieveSuppliers();
   }
 
   onClick(post: object) {
-    this.currentSupplier = post;
-    this.edit = true;
-    console.log(this.currentSupplier);
-    
+    console.log(post);
   }
 
-  onFetchPosts() {
-    // Send Http request
-    this.isFetching = true;
-    this.supplierService.fetchPosts().subscribe(posts => {
-      this.isFetching = false;
-      this.loadedPosts = posts;
-      console.log(posts);
-      
-    }, error => {
-      this.isFetching = false;
-      this.error = error.message;
-      console.log(error);
-      
+  retrieveSuppliers(): void {
+      this.supplierService.getSuppliers().snapshotChanges().pipe(
+        map(changes =>
+          changes.map(c =>
+            ({ id: c.payload.key, ...c.payload.val() })
+          )
+        )
+      ).subscribe(data => {
+        console.log(data);
+        this.suppliers = data;
     });
   }
 
