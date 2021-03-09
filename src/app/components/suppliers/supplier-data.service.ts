@@ -18,4 +18,5 @@ export class SupplierData {
     getSuppliers(): AngularFireList<Supplier> {        
         return this.suppliers;
     }
+    
 }
