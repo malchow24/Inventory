@@ -25,9 +25,9 @@ export class SuppliersComponent implements OnInit {
 
   retrieveSuppliers(): void {
       this.supplierService.getSuppliers().snapshotChanges().pipe(
-        map(changes =>
-          changes.map(c =>
-            ({ id: c.payload.key, ...c.payload.val() })
+        map(supplierData =>
+          supplierData.map(key =>
+            ({ id: key.payload.key, ...key.payload.val() })
           )
         )
       ).subscribe(data => {
